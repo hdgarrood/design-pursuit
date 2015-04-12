@@ -1,0 +1,12 @@
+
+introduction text
+-----------------
+
+Cabal has the long-form 'description' field as well as 'synopsis'; this is
+potentially useful because it's not quite the same as the README; maybe we
+could emulate it with an INTRODUCTION.md, for text that's displayed on the
+package's front page?
+
+Alternatively, let the README.md go on Pursuit, and let people make a separate
+HACKING.md if they want to. (I like this better)
+

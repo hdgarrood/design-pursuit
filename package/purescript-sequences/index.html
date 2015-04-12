@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" type="text/css" href="/normalize.css">
+  <link rel="stylesheet" type="text/css" href="/style.css">
+
+  <title>purescript-sequences</title>
+</head>
+<body>
+  <div class="top-banner clearfix">
+	<div class="container clearfix"> 
+	  <div class="banner-item pursuit">
+		<a class="pursuit" href="/">Pursuit</a>
+	  </div>
+
+	  <form class="banner-item" role="search" action="search" method="get">
+		<label for="q" class="sr-only">Search for packages, types, and functions</label>
+		<input type="text" class="form-control" name="q" placeholder="search for packages, types, functions..."></input>
+	  </form>
+	</div>
+  </div>
+
+  <div class="container" id="content">
+	<div class="clearfix">
+	  <div class="col-main">
+		<h1>package <strong>purescript-sequences</strong></h1>
+	  </div>
+	  <div class="col-aside version-selector">
+		latest (<strong>0.2.1</strong>) <a href="#">▼</a>
+	  </div>
+	</div>
+	<div class="col-aside">
+	  <p>published by <a href="https://github.com/hdgarrood">hdgarrood</a> 1 hour ago</p>
+	  <hr>
+	  <p><a href="https://github.com/hdgarrood/purescript-sequences">hdgarrood/purescript-sequences</a> on github</p>
+	  <hr>
+	  <p><strong>MIT</strong> licence</p>
+	  <hr>
+	  <p><a href="0.2.1">Documentation</a></p>
+	  <hr>
+	  <p><strong>Dependencies</strong></p>
+	  <ul>
+		<li><a href="#">purescript-arrays</a> &gt;=0.3.0, &lt;0.4.0</li>
+		<li><a href="#">purescript-maybe</a>  &gt;=0.2.2, &lt;0.3.0</li>
+		<li><a href="#">purescript-lazy</a> &gt;=0.3.0, &lt;0.4.0</li>
+		<li><a href="#">purescript-arrays</a> &gt;=0.3.2, &lt;0.4.0</li>
+		<li><a href="#">purescript-maybe</a> &gt;=0.2.1, &lt;0.3.0</li>
+		<li><a href="#">purescript-tuples</a> &gt;=0.3.0, &lt;0.4.0</li>
+		<li><a href="#">purescript-monoid</a> &gt;=0.2.0, &lt;0.3.0</li>
+		<li><a href="#">purescript-foldable-traversable</a> &gt;=0.3.0, &lt;0.4.0</li>
+		<li><a href="#">purescript-unfoldable</a> &gt;=0.3.0, &lt;0.4.0</li>
+		<li><a href="#">purescript-control</a> &gt;=0.2.2, &lt;0.3.0</li>
+		<li><a href="#">purescript-identity</a> &gt;=0.3.0, &lt;0.4.0</li>
+	  </ul>
+	</div>
+	<div class="col-main">
+	<p class="synopsis">
+	  An efficient, general-purpose sequence type.
+	</p>
+
+
+<div class="announce instapaper_body md" data-path="README.md" id="readme"><article class="markdown-body entry-content" itemprop="mainContentOfPage">
+
+<p>The implementation uses 2-3 finger trees annotated with sizes, as described in
+the paper <a href="http://staff.city.ac.uk/%7Eross/papers/FingerTree.pdf"><em>Finger Trees: A Simple General-Purpose Data Structure</em></a>, Ralf
+Hinze and Ross Paterson, Journal of Functional Programming 16:2 (2006) pp
+197-217.</p>
+
+<p>Big props also go to <a href="https://github.com/taku0">taku0</a> who did most of the
+initial work on this.</p>
+
+<p>Note that this project is currently <strong>unstable</strong>. The API might change
+significantly from one version to the next.</p>
+
+<h2>
+<a id="user-content-why-not-just-use-arrays-all-the-time" class="anchor" href="#why-not-just-use-arrays-all-the-time" aria-hidden="true"><span class="octicon octicon-link"></span></a>Why not just use Arrays all the time?</h2>
+
+<p>JavaScript's Array type is designed for use in an imperative programming
+environment, where anything can be mutated at any time. This means that reusing
+them is usually not possible. For example:</p>
+
+<code class="highlight highlight-javascript"><pre><span class="pl-k">var</span> as <span class="pl-k">=</span> [<span class="pl-c1">1</span>,<span class="pl-c1">2</span>,<span class="pl-c1">3</span>]
+<span class="pl-k">var</span> bs <span class="pl-k">=</span> as.<span class="pl-c1">concat</span>([<span class="pl-c1">4</span>,<span class="pl-c1">5</span>,<span class="pl-c1">6</span>])
+bs[<span class="pl-c1">0</span>] <span class="pl-k">=</span> <span class="pl-c1">10</span></pre></code>
+
+<p><code>as[0]</code> should still be 1 after executing these commands. Therefore, <code>concat</code>
+has to copy the whole array, and is therefore O(this.length + n), where n is
+the length of the argument.</p>
+
+<p>However in PureScript, values are immutable (ignoring the FFI). So we may take
+advantage of this by writing functions that reuse parts of data structures
+where possible. Sequences are one such structure - in this case, the amortized
+complexity of <code>concat</code> is reduced to O(log(min(n1, n2))), where n1 and n2 are
+the lengths of the arguments.</p>
+
+<p>Amortized complexities of other operations:</p>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Native array</th>
+<th>Sequence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cons/uncons</td>
+<td>O(n)</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td>getAt i</td>
+<td>O(1)</td>
+<td>O(log(min(i, n-i)))</td>
+</tr>
+<tr>
+<td>setAt i</td>
+<td>O(n)</td>
+<td>O(log(min(i, n-i)))</td>
+</tr>
+<tr>
+<td>splitAt i</td>
+<td>O(n)</td>
+<td>O(log(min(i, n-i)))</td>
+</tr>
+</tbody>
+</table>
+
+<h2>
+<a id="user-content-is-it-faster" class="anchor" href="#is-it-faster" aria-hidden="true"><span class="octicon octicon-link"></span></a>Is it faster?</h2>
+
+<p>For large enough sequences, yes. See
+<a href="http://harry.garrood.me/blog/announcing-purescript-sequences/benchmarks/">http://harry.garrood.me/blog/announcing-purescript-sequences/benchmarks/</a>.</p>
+
+<h2>
+<a id="user-content-ok-so-when-is-this-approach-not-suitable" class="anchor" href="#ok-so-when-is-this-approach-not-suitable" aria-hidden="true"><span class="octicon octicon-link"></span></a>Ok, so when is this approach <em>not</em> suitable?</h2>
+
+<p>If you are using JavaScript libraries via the FFI, and passing Arrays back and
+forth between PureScript and JavaScript, you might find that it's easier and
+more efficient to just use Arrays. Generally, JavaScript libraries will not be
+able to use the Seq type in this library, and so you would have to convert
+between Seqs and Arrays at the PS/JS boundaries. The conversion in either
+direction is O(n).</p>
+</article></div>
+</div>
+  </div>
+</body>
+</html>

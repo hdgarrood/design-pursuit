@@ -1,0 +1,262 @@
+@package purescript-sequences
+@version 0.2.1
+
+module Data.FingerTree where
+
+fromFingerTree :: forall f a v. (Unfoldable f, Monoid v, Measured a v) => (FingerTree v a) -> f a
+
+class Measured a v where
+
+data Node v a
+
+instance showNode :: (Show a, Show v) => Show (Node v a) where
+
+node2 :: forall a v. (Monoid v, Measured a v) => a -> a -> Node v a
+
+node3 :: forall a v. (Monoid v, Measured a v) => a -> a -> a -> Node v a
+
+nodeToDigit :: forall a v. (Node v a) -> Digit a
+
+instance functorNode :: Functor (Node v) where
+
+instance foldableNode :: Foldable (Node v) where
+
+instance traversableNode :: Traversable (Node v) where
+
+instance measuredNode :: Measured (Node v a) v where
+
+instance measuredArray :: (Monoid v, Measured a v) => Measured [a] v where
+
+instance measuredLazy :: (Monoid v, Measured a v) => Measured (Lazy a) v where
+
+data FingerTree v a
+
+lazyEmpty :: forall v a. Lazy (FingerTree v a)
+
+deep :: forall a v. (Monoid v, Measured a v) => (Digit a) -> (Lazy (FingerTree v (Node v a))) -> (Digit a) -> FingerTree v a
+
+type Digit a = [a]
+
+instance showFingerTree :: (Show v, Show a) => Show (FingerTree v a) where
+
+compareFingerTree :: forall a v. (Monoid v, Measured a v, Ord a) => (FingerTree v a) -> (FingerTree v a) -> Ordering
+
+(<$$>) :: forall f g a b. (Functor f, Functor g) => (a -> b) -> (f (g a)) -> f (g b)
+
+(<$$$>) :: forall f g h a b. (Functor f, Functor g, Functor h) => (a -> b) -> (f (g (h a))) -> f (g (h b))
+
+instance functorFingerTree :: Functor (FingerTree v) where
+
+instance foldableFingerTree :: Foldable (FingerTree v) where
+
+instance traversableFingerTree :: Traversable (FingerTree v) where
+
+instance measuredFingerTree :: (Monoid v, Measured a v) => Measured (FingerTree v a) v where
+
+cons :: forall a v. (Monoid v, Measured a v) => a -> (FingerTree v a) -> FingerTree v a
+
+snoc :: forall a v. (Monoid v, Measured a v) => (FingerTree v a) -> a -> FingerTree v a
+
+consAll :: forall f a v. (Monoid v, Measured a v, Foldable f) => (f a) -> (FingerTree v a) -> FingerTree v a
+
+snocAll :: forall f a v. (Monoid v, Measured a v, Foldable f) => (FingerTree v a) -> (f a) -> FingerTree v a
+
+toFingerTree :: forall f a v. (Monoid v, Measured a v, Foldable f) => (f a) -> FingerTree v a
+
+data ViewL s a
+
+instance functorViewL :: (Functor s) => Functor (ViewL s) where
+
+headDigit :: forall a. (Digit a) -> a
+
+tailDigit :: forall a. (Digit a) -> Digit a
+
+viewL :: forall a v. (Monoid v, Measured a v) => (FingerTree v a) -> ViewL (FingerTree v) a
+
+deepL :: forall a v. (Monoid v, Measured a v) => (Digit a) -> (Lazy (FingerTree v (Node v a))) -> [a] -> FingerTree v a
+
+isEmpty :: forall a v. (Monoid v, Measured a v) => (FingerTree v a) -> Boolean
+
+head :: forall a v. (Monoid v, Measured a v) => (FingerTree v a) -> Maybe a
+
+tail :: forall a v. (Monoid v, Measured a v) => (FingerTree v a) -> Maybe (FingerTree v a)
+
+lastDigit :: forall a. (Digit a) -> a
+
+initDigit :: forall a. (Digit a) -> Digit a
+
+data ViewR s a
+
+viewR :: forall a v. (Monoid v, Measured a v) => (FingerTree v a) -> ViewR (FingerTree v) a
+
+deepR :: forall a v. (Monoid v, Measured a v) => [a] -> (Lazy (FingerTree v (Node v a))) -> [a] -> FingerTree v a
+
+last :: forall a v. (Monoid v, Measured a v) => (FingerTree v a) -> Maybe a
+
+init :: forall a v. (Monoid v, Measured a v) => (FingerTree v a) -> Maybe (FingerTree v a)
+
+app3 :: forall a v. (Monoid v, Measured a v) => (FingerTree v a) -> [a] -> (FingerTree v a) -> FingerTree v a
+
+nodes :: forall a v. (Monoid v, Measured a v) => [a] -> [Node v a]
+
+append :: forall a v. (Monoid v, Measured a v) => (FingerTree v a) -> (FingerTree v a) -> FingerTree v a
+
+data Split f a
+
+data LazySplit f a
+
+splitDigit :: forall a v. (Monoid v, Measured a v) => (v -> Boolean) -> v -> (Digit a) -> Split Array a
+
+unsafeSplitTree :: forall a v. (Monoid v, Measured a v) => (v -> Boolean) -> v -> (FingerTree v a) -> LazySplit (FingerTree v) a
+
+split :: forall a v. (Monoid v, Measured a v) => (v -> Boolean) -> (FingerTree v a) -> Tuple (Lazy (FingerTree v a)) (Lazy (FingerTree v a))
+
+filter :: forall a v. (Monoid v, Measured a v) => (a -> Boolean) -> (FingerTree v a) -> FingerTree v a
+
+module Data.Sequence where
+
+instance semigroupSize :: Semigroup Size where
+
+instance monoidSize :: Monoid Size where
+
+instance showSize :: Show Size where
+
+instance measuredElem :: Measured (Elem a) Size where
+
+instance showElem :: (Show a) => Show (Elem a) where
+
+instance eqElem :: (Eq a) => Eq (Elem a) where
+
+instance ordElem :: (Ord a) => Ord (Elem a) where
+
+instance foldableElem :: Foldable Elem where
+
+instance functorElem :: Functor Elem where
+
+instance traversableElem :: Traversable Elem where
+
+newtype Seq a
+
+instance eqSeq :: (Eq a) => Eq (Seq a) where
+
+instance showSeq :: (Show a) => Show (Seq a) where
+
+instance ordSeq :: (Ord a) => Ord (Seq a) where
+
+instance semigroupSeq :: Semigroup (Seq a) where
+
+instance monoidSeq :: Monoid (Seq a) where
+
+instance foldableSeq :: Foldable Seq where
+
+instance traversableSeq :: Traversable Seq where
+
+instance unfoldableSeq :: Unfoldable Seq where
+
+instance functorSeq :: Functor Seq where
+
+instance applySeq :: Apply Seq where
+
+instance applicativeSeq :: Applicative Seq where
+
+instance bindSeq :: Bind Seq where
+
+instance monadSeq :: Monad Seq where
+
+instance altSeq :: Alt Seq where
+
+instance plusSeq :: Plus Seq where
+
+instance alternativeSeq :: Alternative Seq where
+
+instance monadPlusSeq :: MonadPlus Seq where
+
+-- | <p>O(1). The number of elements in the sequence.</p>
+length :: forall a. (Seq a) -> Number
+
+-- | <p>O(1). True if the sequence has no elements, false otherwise.</p>
+null :: forall a. (Seq a) -> Boolean
+
+-- | <p>O(1). If the sequence is nonempty, take one element off its left side and
+-- | return that together with the rest of the original sequence. Otherwise,
+-- | return Nothing.</p>
+uncons :: forall a. (Seq a) -> Maybe (Tuple a (Seq a))
+
+-- | <p>O(1). If the sequence is nonempty, take one element off its right side and
+-- | return that together with the rest of the original sequence. Otherwise,
+-- | return Nothing.</p>
+unsnoc :: forall a. (Seq a) -> Maybe (Tuple (Seq a) a)
+
+-- | <p>O(log(min(i,n-i))). Split the sequence into two subsequences. The first
+-- | subsequence will have i elements (unless there are not that many in the
+-- | whole sequence, in which case the first element is the same sequence,
+-- | unchanged).</p>
+splitAt :: forall a. Number -> (Seq a) -> Tuple (Seq a) (Seq a)
+
+-- | <p>O(log(min(i,n-i))). Discard all elements from a Seq after the first n.</p>
+take :: forall a. Number -> (Seq a) -> Seq a
+
+-- | <p>O(log(min(i,n-i))). Discard a given number of elements from the left side
+-- | of a Seq.</p>
+drop :: forall a. Number -> (Seq a) -> Seq a
+
+-- | <p>O(1). True if the given index specifies an element that exists in the
+-- | sequence, false otherwise.</p>
+inBounds :: forall a. (Seq a) -> Number -> Boolean
+
+-- | <p>O(log(min(i,n-i))). Retrieve the element at the given index in the
+-- | sequence. This function is zero-based; that is, the first element in a
+-- | sequence <code>xs</code> can be retrieved with <code>index xs 0</code>.</p>
+index :: forall a. (Seq a) -> Number -> Maybe a
+
+-- | <p>O(log(min(i,n-i))). Adjust the element at the specified index by
+-- | applying the given function to it. If the index is out of range, the
+-- | sequence is returned unchanged.</p>
+adjust :: forall a. (a -> a) -> Number -> (Seq a) -> Seq a
+
+-- | <p>O(log(min(i,n-i))). Replace the element at the specified index with
+-- | a new element. If the index is out of range, the sequence is returned
+-- | unchanged.</p>
+replace :: forall a. a -> Number -> (Seq a) -> Seq a
+
+-- | <p>A sequence with no elements.</p>
+empty :: forall a. Seq a
+
+-- | <p>O(1). Add an element to the left end of a Seq.</p>
+cons :: forall a. a -> (Seq a) -> Seq a
+
+-- | <p>O(1). Add an element to the right end of a Seq.</p>
+snoc :: forall a. (Seq a) -> a -> Seq a
+
+-- | <p>O(1). Create a Seq with one element.</p>
+singleton :: forall a. a -> Seq a
+
+-- | <p>O(log(min(i,n-i))). Join two Seqs together.</p>
+append :: forall a. (Seq a) -> (Seq a) -> Seq a
+
+-- | <p>O(1). Get the first element of a Seq. Equivalent to <code>\seq -&gt; index seq 0</code>.</p>
+head :: forall a. (Seq a) -> Maybe a
+
+-- | <p>O(1). Get all but the first element of a Seq. Equivalent to <code>drop 1</code>.</p>
+tail :: forall a. (Seq a) -> Maybe (Seq a)
+
+-- | <p>O(1). Get all but the last element of a Seq. Equivalent to <code>\seq -&gt; take
+-- | (length seq - 1)</code>.</p>
+init :: forall a. (Seq a) -> Maybe (Seq a)
+
+-- | <p>O(1). Get the last element of a Seq. Equivalent to
+-- | <code>\seq -&gt; index seq (length seq - 1)</code>.</p>
+last :: forall a. (Seq a) -> Maybe a
+
+-- | <p>Probably O(n), but depends on the Foldable instance. Turn any <code>Foldable</code>
+-- | into a <code>Seq</code>.</p>
+toSeq :: forall f a. (Foldable f) => (f a) -> Seq a
+
+-- | <p>Probably O(n), but depends on the Unfoldable instance. Turn a <code>Seq</code> into
+-- | any <code>Unfoldable</code>.</p>
+fromSeq :: forall f a. (Functor f, Unfoldable f) => (Seq a) -> f a
+
+-- | <p>O(n). Create a new Seq which contains only those elements of the input
+-- | Seq which satisfy the given predicate.</p>
+filter :: forall a. (a -> Boolean) -> (Seq a) -> Seq a
+

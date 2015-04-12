@@ -1,0 +1,214 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/normalize.css">
+<link rel="stylesheet" type="text/css" href="/style.css">
+<title>
+  Data.Sequence</title>
+</head>
+<body>
+<div class="top-banner clearfix">
+  <div class="container clearfix">
+    <div class="banner-item pursuit">
+      <a class="pursuit" href="/">
+        Pursuit</a>
+</div>
+<form class="banner-item" action="search" method="get">
+  <label for="q" class="sr-only">
+    Search for packages, types, and functions</label>
+  <input type="text" class="form-control" name="q" placeholder="search for packages, types, functions...">
+  </form>
+  </div>
+</div>
+<div class="container" id="content">
+	<div class="clearfix">
+	  <div class="col-main">
+		<h1>module <strong>Data.Sequence</strong></h1>
+	  </div>
+	  <div class="col-aside version-selector">
+		latest (<strong>0.2.1</strong>) <a href="#">▼</a>
+	  </div>
+	</div>
+  <div class="col-aside">
+    package <a href="/package/purescript-sequences">purescript-sequences</a>
+    <hr>
+    <a href="/package/purescript-sequences/0.2.1/">Contents</a>
+    <hr>
+    <a href="/package/purescript-sequences/0.2.1/index">Index</a>
+  </div>
+    <div class="col-main clearfix">
+  <a name="semigroupSize" href="#semigroupSize">
+    <h2>
+      <code>
+        semigroupSize</code>
+  </h2>
+</a>
+<p class="decl">
+<code>
+  <span class="keyword">
+    instance</span>
+  <span class="ident">
+    semigroupSize</span>
+  <span class="syntax">
+    ::</span>
+  <span class="ctor">
+    Semigroup</span>
+  <a href="#Size">
+    <span class="ctor">
+      Size</span>
+</a>
+<span class="keyword">
+  where</span>
+  </code>
+  </p>
+  <ul>
+  </ul>
+  <a href="https://github.com/hdgarrood/purescript-sequences/tree/master/src/Data/Sequence.purs#L84-L87">
+    Source</a>
+  <a name="monoidSize" href="#monoidSize">
+    <h2>
+      <code>
+        monoidSize</code>
+  </h2>
+</a>
+<p class="decl">
+<code>
+  <span class="keyword">
+    instance</span>
+  <span class="ident">
+    monoidSize</span>
+  <span class="syntax">
+    ::</span>
+  <a href="../../../../../../../../../../../../../../../../../../../../../../../purescript-monoid/0.2.0/Data/Monoid/index.html#Monoid">
+    <span class="ctor">
+      Monoid</span>
+</a>
+<a href="#Size">
+  <span class="ctor">
+    Size</span>
+    </a>
+    <span class="keyword">
+      where</span>
+  </code>
+  </p>
+  <ul>
+  </ul>
+  <a href="https://github.com/hdgarrood/purescript-sequences/tree/master/src/Data/Sequence.purs#L87-L90">
+    Source</a>
+  <a name="showSize" href="#showSize">
+    <h2>
+      <code>
+        showSize</code>
+  </h2>
+</a>
+<p class="decl">
+<code>
+  <span class="keyword">
+    instance</span>
+  <span class="ident">
+    showSize</span>
+  <span class="syntax">
+    ::</span>
+  <span class="ctor">
+    Show</span>
+  <a href="#Size">
+    <span class="ctor">
+      Size</span>
+</a>
+<span class="keyword">
+  where</span>
+  </code>
+  </p>
+  <ul>
+  </ul>
+  <a href="https://github.com/hdgarrood/purescript-sequences/tree/master/src/Data/Sequence.purs#L90-L93">
+    Source</a>
+  <a name="measuredElem" href="#measuredElem">
+    <h2>
+      <code>
+        measuredElem</code>
+  </h2>
+</a>
+<p class="decl">
+<code>
+  <span class="keyword">
+    instance</span>
+  <span class="ident">
+    measuredElem</span>
+  <span class="syntax">
+    ::</span>
+  <a href="../FingerTree/index.html#Measured">
+    <span class="ctor">
+      Measured</span>
+</a>
+<span class="syntax">
+  (</span><a href="#Elem"><span class="ctor">Elem</span></a> <span class="ident">a</span><span class="syntax">)
+  </span>
+  <a href="#Size">
+    <span class="ctor">
+      Size</span>
+</a>
+<span class="keyword">
+  where</span>
+  </code>
+  </p>
+  <ul>
+  </ul>
+  <a href="https://github.com/hdgarrood/purescript-sequences/tree/master/src/Data/Sequence.purs#L108-L111">
+    Source</a>
+  <a name="showElem" href="#showElem">
+    <h2>
+      <code>
+        showElem</code>
+  </h2>
+</a>
+<p class="decl"><code><span class="keyword">instance</span> <span class="ident">showElem</span> <span class="syntax">::</span> <span class="syntax">(</span><span class="ctor">Show</span> <span class="ident">a</span><span class="syntax">) =&gt;</span> <span class="ctor">Show</span> <span class="syntax">(</span><a href="#Elem"><span class="ctor">Elem</span></a> <span class="ident">a</span><span class="syntax">)</span> <span class="keyword">where</span></code></p><ul></ul><a href="https://github.com/hdgarrood/purescript-sequences/tree/master/src/Data/Sequence.purs#L111-L114">Source</a><a name="eqElem" href="#eqElem"><h2><code>eqElem</code></h2></a><p class="decl"><code><span class="keyword">instance</span> <span class="ident">eqElem</span> <span class="syntax">::</span> <span class="syntax">(</span><span class="ctor">Eq</span> <span class="ident">a</span><span class="syntax">) =&gt;</span> <span class="ctor">Eq</span> <span class="syntax">(</span><a href="#Elem"><span class="ctor">Elem</span></a> <span class="ident">a</span><span class="syntax">)</span> <span class="keyword">where</span></code></p><ul></ul><a href="https://github.com/hdgarrood/purescript-sequences/tree/master/src/Data/Sequence.purs#L114-L118">Source</a><a name="ordElem" href="#ordElem"><h2><code>ordElem</code></h2></a><p class="decl"><code><span class="keyword">instance</span> <span class="ident">ordElem</span> <span class="syntax">::</span> <span class="syntax">(</span><span class="ctor">Ord</span> <span class="ident">a</span><span class="syntax">) =&gt;</span> <span class="ctor">Ord</span> <span class="syntax">(</span><a href="#Elem"><span class="ctor">Elem</span></a> <span class="ident">a</span><span class="syntax">)</span> <span class="keyword">where</span></code></p><ul></ul><a href="https://github.com/hdgarrood/purescript-sequences/tree/master/src/Data/Sequence.purs#L118-L121">Source</a><a name="foldableElem" href="#foldableElem"><h2><code>foldableElem</code></h2></a><p class="decl"><code><span class="keyword">instance</span> <span class="ident">foldableElem</span> <span class="syntax">::</span> <a href="../../../../../../../../../../../../../../../../../../../../../../../purescript-foldable-traversable/0.3.1/Data/Foldable/index.html#Foldable"><span class="ctor">Foldable</span></a> <a href="#Elem"><span class="ctor">Elem</span></a> <span class="keyword">where</span></code></p><ul></ul><a href="https://github.com/hdgarrood/purescript-sequences/tree/master/src/Data/Sequence.purs#L121-L126">Source</a><a name="functorElem" href="#functorElem"><h2><code>functorElem</code></h2></a><p class="decl"><code><span class="keyword">instance</span> <span class="ident">functorElem</span> <span class="syntax">::</span> <span class="ctor">Functor</span> <a href="#Elem"><span class="ctor">Elem</span></a> <span class="keyword">where</span></code></p><ul></ul><a href="https://github.com/hdgarrood/purescript-sequences/tree/master/src/Data/Sequence.purs#L126-L129">Source</a><a name="traversableElem" href="#traversableElem"><h2><code>traversableElem</code></h2></a><p class="decl"><code><span class="keyword">instance</span> <span class="ident">traversableElem</span> <span class="syntax">::</span> <a href="../../../../../../../../../../../../../../../../../../../../../../../purescript-foldable-traversable/0.3.1/Data/Traversable/index.html#Traversable"><span class="ctor">Traversable</span></a> <a href="#Elem"><span class="ctor">Elem</span></a> <span class="keyword">where</span></code></p><ul></ul><a href="https://github.com/hdgarrood/purescript-sequences/tree/master/src/Data/Sequence.purs#L129-L133">Source</a><a name="Seq" href="#Seq"><h2><code>Seq</code></h2></a><p class="decl"><code><span class="keyword">newtype</span> <a href="#Seq"><span class="ctor">Seq</span></a> <span class="ident">a</span></code></p><ul></ul><a href="https://github.com/hdgarrood/purescript-sequences/tree/master/src/Data/Sequence.purs#L134-L138">Source</a><a name="eqSeq" href="#eqSeq"><h2><code>eqSeq</code></h2></a><p class="decl"><code><span class="keyword">instance</span> <span class="ident">eqSeq</span> <span class="syntax">::</span> <span class="syntax">(</span><span class="ctor">Eq</span> <span class="ident">a</span><span class="syntax">) =&gt;</span> <span class="ctor">Eq</span> <span class="syntax">(</span><a href="#Seq"><span class="ctor">Seq</span></a> <span class="ident">a</span><span class="syntax">)</span> <span class="keyword">where</span></code></p><ul></ul><a href="https://github.com/hdgarrood/purescript-sequences/tree/master/src/Data/Sequence.purs#L141-L147">Source</a><a name="showSeq" href="#showSeq"><h2><code>showSeq</code></h2></a><p class="decl"><code><span class="keyword">instance</span> <span class="ident">showSeq</span> <span class="syntax">::</span> <span class="syntax">(</span><span class="ctor">Show</span> <span class="ident">a</span><span class="syntax">) =&gt;</span> <span class="ctor">Show</span> <span class="syntax">(</span><a href="#Seq"><span class="ctor">Seq</span></a> <span class="ident">a</span><span class="syntax">)</span> <span class="keyword">where</span></code></p><ul></ul><a href="https://github.com/hdgarrood/purescript-sequences/tree/master/src/Data/Sequence.purs#L147-L150">Source</a><a name="ordSeq" href="#ordSeq"><h2><code>ordSeq</code></h2></a><p class="decl"><code><span class="keyword">instance</span> <span class="ident">ordSeq</span> <span class="syntax">::</span> <span class="syntax">(</span><span class="ctor">Ord</span> <span class="ident">a</span><span class="syntax">) =&gt;</span> <span class="ctor">Ord</span> <span class="syntax">(</span><a href="#Seq"><span class="ctor">Seq</span></a> <span class="ident">a</span><span class="syntax">)</span> <span class="keyword">where</span></code></p><ul></ul><a href="https://github.com/hdgarrood/purescript-sequences/tree/master/src/Data/Sequence.purs#L150-L153">Source</a><a name="semigroupSeq" href="#semigroupSeq"><h2><code>semigroupSeq</code></h2></a><p class="decl"><code><span class="keyword">instance</span> <span class="ident">semigroupSeq</span> <span class="syntax">::</span> <span class="ctor">Semigroup</span> <span class="syntax">(</span><a href="#Seq"><span class="ctor">Seq</span></a> <span class="ident">a</span><span class="syntax">)</span> <span class="keyword">where</span></code></p><ul></ul><a href="https://github.com/hdgarrood/purescript-sequences/tree/master/src/Data/Sequence.purs#L153-L156">Source</a><a name="monoidSeq" href="#monoidSeq"><h2><code>monoidSeq</code></h2></a><p class="decl"><code><span class="keyword">instance</span> <span class="ident">monoidSeq</span> <span class="syntax">::</span> <a href="../../../../../../../../../../../../../../../../../../../../../../../purescript-monoid/0.2.0/Data/Monoid/index.html#Monoid"><span class="ctor">Monoid</span></a> <span class="syntax">(</span><a href="#Seq"><span class="ctor">Seq</span></a> <span class="ident">a</span><span class="syntax">)</span> <span class="keyword">where</span></code></p><ul></ul><a href="https://github.com/hdgarrood/purescript-sequences/tree/master/src/Data/Sequence.purs#L156-L159">Source</a><a name="foldableSeq" href="#foldableSeq"><h2><code>foldableSeq</code></h2></a><p class="decl"><code><span class="keyword">instance</span> <span class="ident">foldableSeq</span> <span class="syntax">::</span> <a href="../../../../../../../../../../../../../../../../../../../../../../../purescript-foldable-traversable/0.3.1/Data/Foldable/index.html#Foldable"><span class="ctor">Foldable</span></a> <a href="#Seq"><span class="ctor">Seq</span></a> <span class="keyword">where</span></code></p><ul></ul><a href="https://github.com/hdgarrood/purescript-sequences/tree/master/src/Data/Sequence.purs#L165-L170">Source</a><a name="traversableSeq" href="#traversableSeq"><h2><code>traversableSeq</code></h2></a><p class="decl"><code><span class="keyword">instance</span> <span class="ident">traversableSeq</span> <span class="syntax">::</span> <a href="../../../../../../../../../../../../../../../../../../../../../../../purescript-foldable-traversable/0.3.1/Data/Traversable/index.html#Traversable"><span class="ctor">Traversable</span></a> <a href="#Seq"><span class="ctor">Seq</span></a> <span class="keyword">where</span></code></p><ul></ul><a href="https://github.com/hdgarrood/purescript-sequences/tree/master/src/Data/Sequence.purs#L170-L174">Source</a><a name="unfoldableSeq" href="#unfoldableSeq"><h2><code>unfoldableSeq</code></h2></a><p class="decl"><code><span class="keyword">instance</span> <span class="ident">unfoldableSeq</span> <span class="syntax">::</span> <a href="../../../../../../../../../../../../../../../../../../../../../../../purescript-unfoldable/0.3.2/Data/Unfoldable/index.html#Unfoldable"><span class="ctor">Unfoldable</span></a> <a href="#Seq"><span class="ctor">Seq</span></a> <span class="keyword">where</span></code></p><ul></ul><a href="https://github.com/hdgarrood/purescript-sequences/tree/master/src/Data/Sequence.purs#L174-L179">Source</a><a name="functorSeq" href="#functorSeq"><h2><code>functorSeq</code></h2></a><p class="decl"><code><span class="keyword">instance</span> <span class="ident">functorSeq</span> <span class="syntax">::</span> <span class="ctor">Functor</span> <a href="#Seq"><span class="ctor">Seq</span></a> <span class="keyword">where</span></code></p><ul></ul><a href="https://github.com/hdgarrood/purescript-sequences/tree/master/src/Data/Sequence.purs#L179-L185">Source</a><a name="applySeq" href="#applySeq"><h2><code>applySeq</code></h2></a><p class="decl"><code><span class="keyword">instance</span> <span class="ident">applySeq</span> <span class="syntax">::</span> <span class="ctor">Apply</span> <a href="#Seq"><span class="ctor">Seq</span></a> <span class="keyword">where</span></code></p><ul></ul><a href="https://github.com/hdgarrood/purescript-sequences/tree/master/src/Data/Sequence.purs#L185-L188">Source</a><a name="applicativeSeq" href="#applicativeSeq"><h2><code>applicativeSeq</code></h2></a><p class="decl"><code><span class="keyword">instance</span> <span class="ident">applicativeSeq</span> <span class="syntax">::</span> <span class="ctor">Applicative</span> <a href="#Seq"><span class="ctor">Seq</span></a> <span class="keyword">where</span></code></p><ul></ul><a href="https://github.com/hdgarrood/purescript-sequences/tree/master/src/Data/Sequence.purs#L188-L191">Source</a><a name="bindSeq" href="#bindSeq"><h2><code>bindSeq</code></h2></a><p class="decl"><code><span class="keyword">instance</span> <span class="ident">bindSeq</span> <span class="syntax">::</span> <span class="ctor">Bind</span> <a href="#Seq"><span class="ctor">Seq</span></a> <span class="keyword">where</span></code></p><ul></ul><a href="https://github.com/hdgarrood/purescript-sequences/tree/master/src/Data/Sequence.purs#L191-L195">Source</a><a name="monadSeq" href="#monadSeq"><h2><code>monadSeq</code></h2></a><p class="decl"><code><span class="keyword">instance</span> <span class="ident">monadSeq</span> <span class="syntax">::</span> <span class="ctor">Monad</span> <a href="#Seq"><span class="ctor">Seq</span></a> <span class="keyword">where</span></code></p><ul></ul><a href="https://github.com/hdgarrood/purescript-sequences/tree/master/src/Data/Sequence.purs#L195-L197">Source</a><a name="altSeq" href="#altSeq"><h2><code>altSeq</code></h2></a><p class="decl"><code><span class="keyword">instance</span> <span class="ident">altSeq</span> <span class="syntax">::</span> <a href="../../../../../../../../../../../../../../../../../../../../../../../purescript-control/0.2.6/Control/Alt/index.html#Alt"><span class="ctor">Alt</span></a> <a href="#Seq"><span class="ctor">Seq</span></a> <span class="keyword">where</span></code></p><ul></ul><a href="https://github.com/hdgarrood/purescript-sequences/tree/master/src/Data/Sequence.purs#L197-L200">Source</a><a name="plusSeq" href="#plusSeq"><h2><code>plusSeq</code></h2></a><p class="decl"><code><span class="keyword">instance</span> <span class="ident">plusSeq</span> <span class="syntax">::</span> <a href="../../../../../../../../../../../../../../../../../../../../../../../purescript-control/0.2.6/Control/Plus/index.html#Plus"><span class="ctor">Plus</span></a> <a href="#Seq"><span class="ctor">Seq</span></a> <span class="keyword">where</span></code></p><ul></ul><a href="https://github.com/hdgarrood/purescript-sequences/tree/master/src/Data/Sequence.purs#L200-L203">Source</a><a name="alternativeSeq" href="#alternativeSeq"><h2><code>alternativeSeq</code></h2></a><p class="decl"><code><span class="keyword">instance</span> <span class="ident">alternativeSeq</span> <span class="syntax">::</span> <a href="../../../../../../../../../../../../../../../../../../../../../../../purescript-control/0.2.6/Control/Alternative/index.html#Alternative"><span class="ctor">Alternative</span></a> <a href="#Seq"><span class="ctor">Seq</span></a> <span class="keyword">where</span></code></p><ul></ul><a href="https://github.com/hdgarrood/purescript-sequences/tree/master/src/Data/Sequence.purs#L203-L205">Source</a><a name="monadPlusSeq" href="#monadPlusSeq"><h2><code>monadPlusSeq</code></h2></a><p class="decl"><code><span class="keyword">instance</span> <span class="ident">monadPlusSeq</span> <span class="syntax">::</span> <a href="../../../../../../../../../../../../../../../../../../../../../../../purescript-control/0.2.6/Control/MonadPlus/index.html#MonadPlus"><span class="ctor">MonadPlus</span></a> <a href="#Seq"><span class="ctor">Seq</span></a> <span class="keyword">where</span></code></p><ul></ul><a href="https://github.com/hdgarrood/purescript-sequences/tree/master/src/Data/Sequence.purs#L205-L208">Source</a><a name="length" href="#length"><h2><code>length</code></h2></a><p class="decl"><code><span class="ident">length</span> <span class="syntax">::</span> <span class="keyword">forall</span> <span class="ident">a</span><span class="syntax">.</span> <span class="syntax">(</span><a href="#Seq"><span class="ctor">Seq</span></a> <span class="ident">a</span><span class="syntax">)</span> <span class="syntax">-&gt;</span> <span class="ctor">Number</span></code></p><ul></ul><p>O(1). The number of elements in the sequence.</p>
+<a href="https://github.com/hdgarrood/purescript-sequences/tree/master/src/Data/Sequence.purs#L208-L209">Source</a><a name="null" href="#null"><h2><code>null</code></h2></a><p class="decl"><code><span class="ident">null</span> <span class="syntax">::</span> <span class="keyword">forall</span> <span class="ident">a</span><span class="syntax">.</span> <span class="syntax">(</span><a href="#Seq"><span class="ctor">Seq</span></a> <span class="ident">a</span><span class="syntax">)</span> <span class="syntax">-&gt;</span> <span class="ctor">Boolean</span></code></p><ul></ul><p>O(1). True if the sequence has no elements, false otherwise.</p>
+<a href="https://github.com/hdgarrood/purescript-sequences/tree/master/src/Data/Sequence.purs#L212-L213">Source</a><a name="uncons" href="#uncons"><h2><code>uncons</code></h2></a><p class="decl"><code><span class="ident">uncons</span> <span class="syntax">::</span> <span class="keyword">forall</span> <span class="ident">a</span><span class="syntax">.</span> <span class="syntax">(</span><a href="#Seq"><span class="ctor">Seq</span></a> <span class="ident">a</span><span class="syntax">)</span> <span class="syntax">-&gt;</span> <a href="../../../../../../../../../../../../../../../../../../../../../../../purescript-maybe/0.2.2/Data/Maybe/index.html#Maybe"><span class="ctor">Maybe</span></a> <span class="syntax">(</span><a href="../../../../../../../../../../../../../../../../../../../../../../../purescript-tuples/0.3.4/Data/Tuple/index.html#Tuple"><span class="ctor">Tuple</span></a> <span class="ident">a</span> <span class="syntax">(</span><a href="#Seq"><span class="ctor">Seq</span></a> <span class="ident">a</span><span class="syntax">)</span><span class="syntax">)</span></code></p><ul></ul><p>O(1). If the sequence is nonempty, take one element off its left side and
+return that together with the rest of the original sequence. Otherwise,
+return Nothing.</p>
+<a href="https://github.com/hdgarrood/purescript-sequences/tree/master/src/Data/Sequence.purs#L219-L220">Source</a><a name="unsnoc" href="#unsnoc"><h2><code>unsnoc</code></h2></a><p class="decl"><code><span class="ident">unsnoc</span> <span class="syntax">::</span> <span class="keyword">forall</span> <span class="ident">a</span><span class="syntax">.</span> <span class="syntax">(</span><a href="#Seq"><span class="ctor">Seq</span></a> <span class="ident">a</span><span class="syntax">)</span> <span class="syntax">-&gt;</span> <a href="../../../../../../../../../../../../../../../../../../../../../../../purescript-maybe/0.2.2/Data/Maybe/index.html#Maybe"><span class="ctor">Maybe</span></a> <span class="syntax">(</span><a href="../../../../../../../../../../../../../../../../../../../../../../../purescript-tuples/0.3.4/Data/Tuple/index.html#Tuple"><span class="ctor">Tuple</span></a> <span class="syntax">(</span><a href="#Seq"><span class="ctor">Seq</span></a> <span class="ident">a</span><span class="syntax">)</span> <span class="ident">a</span><span class="syntax">)</span></code></p><ul></ul><p>O(1). If the sequence is nonempty, take one element off its right side and
+return that together with the rest of the original sequence. Otherwise,
+return Nothing.</p>
+<a href="https://github.com/hdgarrood/purescript-sequences/tree/master/src/Data/Sequence.purs#L228-L229">Source</a><a name="splitAt" href="#splitAt"><h2><code>splitAt</code></h2></a><p class="decl"><code><span class="ident">splitAt</span> <span class="syntax">::</span> <span class="keyword">forall</span> <span class="ident">a</span><span class="syntax">.</span> <span class="ctor">Number</span> <span class="syntax">-&gt;</span> <span class="syntax">(</span><a href="#Seq"><span class="ctor">Seq</span></a> <span class="ident">a</span><span class="syntax">)</span> <span class="syntax">-&gt;</span> <a href="../../../../../../../../../../../../../../../../../../../../../../../purescript-tuples/0.3.4/Data/Tuple/index.html#Tuple"><span class="ctor">Tuple</span></a> <span class="syntax">(</span><a href="#Seq"><span class="ctor">Seq</span></a> <span class="ident">a</span><span class="syntax">)</span> <span class="syntax">(</span><a href="#Seq"><span class="ctor">Seq</span></a> <span class="ident">a</span><span class="syntax">)</span></code></p><ul></ul><p>O(log(min(i,n-i))). Split the sequence into two subsequences. The first
+subsequence will have i elements (unless there are not that many in the
+whole sequence, in which case the first element is the same sequence,
+unchanged).</p>
+<a href="https://github.com/hdgarrood/purescript-sequences/tree/master/src/Data/Sequence.purs#L247-L248">Source</a><a name="take" href="#take"><h2><code>take</code></h2></a><p class="decl"><code><span class="ident">take</span> <span class="syntax">::</span> <span class="keyword">forall</span> <span class="ident">a</span><span class="syntax">.</span> <span class="ctor">Number</span> <span class="syntax">-&gt;</span> <span class="syntax">(</span><a href="#Seq"><span class="ctor">Seq</span></a> <span class="ident">a</span><span class="syntax">)</span> <span class="syntax">-&gt;</span> <a href="#Seq"><span class="ctor">Seq</span></a> <span class="ident">a</span></code></p><ul></ul><p>O(log(min(i,n-i))). Discard all elements from a Seq after the first n.</p>
+<a href="https://github.com/hdgarrood/purescript-sequences/tree/master/src/Data/Sequence.purs#L254-L255">Source</a><a name="drop" href="#drop"><h2><code>drop</code></h2></a><p class="decl"><code><span class="ident">drop</span> <span class="syntax">::</span> <span class="keyword">forall</span> <span class="ident">a</span><span class="syntax">.</span> <span class="ctor">Number</span> <span class="syntax">-&gt;</span> <span class="syntax">(</span><a href="#Seq"><span class="ctor">Seq</span></a> <span class="ident">a</span><span class="syntax">)</span> <span class="syntax">-&gt;</span> <a href="#Seq"><span class="ctor">Seq</span></a> <span class="ident">a</span></code></p><ul></ul><p>O(log(min(i,n-i))). Discard a given number of elements from the left side
+of a Seq.</p>
+<a href="https://github.com/hdgarrood/purescript-sequences/tree/master/src/Data/Sequence.purs#L259-L260">Source</a><a name="inBounds" href="#inBounds"><h2><code>inBounds</code></h2></a><p class="decl"><code><span class="ident">inBounds</span> <span class="syntax">::</span> <span class="keyword">forall</span> <span class="ident">a</span><span class="syntax">.</span> <span class="syntax">(</span><a href="#Seq"><span class="ctor">Seq</span></a> <span class="ident">a</span><span class="syntax">)</span> <span class="syntax">-&gt;</span> <span class="ctor">Number</span> <span class="syntax">-&gt;</span> <span class="ctor">Boolean</span></code></p><ul></ul><p>O(1). True if the given index specifies an element that exists in the
+sequence, false otherwise.</p>
+<a href="https://github.com/hdgarrood/purescript-sequences/tree/master/src/Data/Sequence.purs#L264-L265">Source</a><a name="index" href="#index"><h2><code>index</code></h2></a><p class="decl"><code><span class="ident">index</span> <span class="syntax">::</span> <span class="keyword">forall</span> <span class="ident">a</span><span class="syntax">.</span> <span class="syntax">(</span><a href="#Seq"><span class="ctor">Seq</span></a> <span class="ident">a</span><span class="syntax">)</span> <span class="syntax">-&gt;</span> <span class="ctor">Number</span> <span class="syntax">-&gt;</span> <a href="../../../../../../../../../../../../../../../../../../../../../../../purescript-maybe/0.2.2/Data/Maybe/index.html#Maybe"><span class="ctor">Maybe</span></a> <span class="ident">a</span></code></p><ul></ul><p>O(log(min(i,n-i))). Retrieve the element at the given index in the
+sequence. This function is zero-based; that is, the first element in a
+sequence <code>xs</code> can be retrieved with <code>index xs 0</code>.</p>
+<a href="https://github.com/hdgarrood/purescript-sequences/tree/master/src/Data/Sequence.purs#L270-L271">Source</a><a name="adjust" href="#adjust"><h2><code>adjust</code></h2></a><p class="decl"><code><span class="ident">adjust</span> <span class="syntax">::</span> <span class="keyword">forall</span> <span class="ident">a</span><span class="syntax">.</span> <span class="syntax">(</span><span class="ident">a</span> <span class="syntax">-&gt;</span> <span class="ident">a</span><span class="syntax">)</span> <span class="syntax">-&gt;</span> <span class="ctor">Number</span> <span class="syntax">-&gt;</span> <span class="syntax">(</span><a href="#Seq"><span class="ctor">Seq</span></a> <span class="ident">a</span><span class="syntax">)</span> <span class="syntax">-&gt;</span> <a href="#Seq"><span class="ctor">Seq</span></a> <span class="ident">a</span></code></p><ul></ul><p>O(log(min(i,n-i))). Adjust the element at the specified index by
+applying the given function to it. If the index is out of range, the
+sequence is returned unchanged.</p>
+<a href="https://github.com/hdgarrood/purescript-sequences/tree/master/src/Data/Sequence.purs#L284-L285">Source</a><a name="replace" href="#replace"><h2><code>replace</code></h2></a><p class="decl"><code><span class="ident">replace</span> <span class="syntax">::</span> <span class="keyword">forall</span> <span class="ident">a</span><span class="syntax">.</span> <span class="ident">a</span> <span class="syntax">-&gt;</span> <span class="ctor">Number</span> <span class="syntax">-&gt;</span> <span class="syntax">(</span><a href="#Seq"><span class="ctor">Seq</span></a> <span class="ident">a</span><span class="syntax">)</span> <span class="syntax">-&gt;</span> <a href="#Seq"><span class="ctor">Seq</span></a> <span class="ident">a</span></code></p><ul></ul><p>O(log(min(i,n-i))). Replace the element at the specified index with
+a new element. If the index is out of range, the sequence is returned
+unchanged.</p>
+<a href="https://github.com/hdgarrood/purescript-sequences/tree/master/src/Data/Sequence.purs#L302-L303">Source</a><a name="empty" href="#empty"><h2><code>empty</code></h2></a><p class="decl"><code><span class="ident">empty</span> <span class="syntax">::</span> <span class="keyword">forall</span> <span class="ident">a</span><span class="syntax">.</span> <a href="#Seq"><span class="ctor">Seq</span></a> <span class="ident">a</span></code></p><ul></ul><p>A sequence with no elements.</p>
+<a href="https://github.com/hdgarrood/purescript-sequences/tree/master/src/Data/Sequence.purs#L306-L307">Source</a><a name="cons" href="#cons"><h2><code>cons</code></h2></a><p class="decl"><code><span class="ident">cons</span> <span class="syntax">::</span> <span class="keyword">forall</span> <span class="ident">a</span><span class="syntax">.</span> <span class="ident">a</span> <span class="syntax">-&gt;</span> <span class="syntax">(</span><a href="#Seq"><span class="ctor">Seq</span></a> <span class="ident">a</span><span class="syntax">)</span> <span class="syntax">-&gt;</span> <a href="#Seq"><span class="ctor">Seq</span></a> <span class="ident">a</span></code></p><ul></ul><p>O(1). Add an element to the left end of a Seq.</p>
+<a href="https://github.com/hdgarrood/purescript-sequences/tree/master/src/Data/Sequence.purs#L310-L311">Source</a><a name="snoc" href="#snoc"><h2><code>snoc</code></h2></a><p class="decl"><code><span class="ident">snoc</span> <span class="syntax">::</span> <span class="keyword">forall</span> <span class="ident">a</span><span class="syntax">.</span> <span class="syntax">(</span><a href="#Seq"><span class="ctor">Seq</span></a> <span class="ident">a</span><span class="syntax">)</span> <span class="syntax">-&gt;</span> <span class="ident">a</span> <span class="syntax">-&gt;</span> <a href="#Seq"><span class="ctor">Seq</span></a> <span class="ident">a</span></code></p><ul></ul><p>O(1). Add an element to the right end of a Seq.</p>
+<a href="https://github.com/hdgarrood/purescript-sequences/tree/master/src/Data/Sequence.purs#L314-L315">Source</a><a name="singleton" href="#singleton"><h2><code>singleton</code></h2></a><p class="decl"><code><span class="ident">singleton</span> <span class="syntax">::</span> <span class="keyword">forall</span> <span class="ident">a</span><span class="syntax">.</span> <span class="ident">a</span> <span class="syntax">-&gt;</span> <a href="#Seq"><span class="ctor">Seq</span></a> <span class="ident">a</span></code></p><ul></ul><p>O(1). Create a Seq with one element.</p>
+<a href="https://github.com/hdgarrood/purescript-sequences/tree/master/src/Data/Sequence.purs#L318-L319">Source</a><a name="append" href="#append"><h2><code>append</code></h2></a><p class="decl"><code><span class="ident">append</span> <span class="syntax">::</span> <span class="keyword">forall</span> <span class="ident">a</span><span class="syntax">.</span> <span class="syntax">(</span><a href="#Seq"><span class="ctor">Seq</span></a> <span class="ident">a</span><span class="syntax">)</span> <span class="syntax">-&gt;</span> <span class="syntax">(</span><a href="#Seq"><span class="ctor">Seq</span></a> <span class="ident">a</span><span class="syntax">)</span> <span class="syntax">-&gt;</span> <a href="#Seq"><span class="ctor">Seq</span></a> <span class="ident">a</span></code></p><ul></ul><p>O(log(min(i,n-i))). Join two Seqs together.</p>
+<a href="https://github.com/hdgarrood/purescript-sequences/tree/master/src/Data/Sequence.purs#L322-L323">Source</a><a name="head" href="#head"><h2><code>head</code></h2></a><p class="decl"><code><span class="ident">head</span> <span class="syntax">::</span> <span class="keyword">forall</span> <span class="ident">a</span><span class="syntax">.</span> <span class="syntax">(</span><a href="#Seq"><span class="ctor">Seq</span></a> <span class="ident">a</span><span class="syntax">)</span> <span class="syntax">-&gt;</span> <a href="../../../../../../../../../../../../../../../../../../../../../../../purescript-maybe/0.2.2/Data/Maybe/index.html#Maybe"><span class="ctor">Maybe</span></a> <span class="ident">a</span></code></p><ul></ul><p>O(1). Get the first element of a Seq. Equivalent to <code>\seq -&gt; index seq 0</code>.</p>
+<a href="https://github.com/hdgarrood/purescript-sequences/tree/master/src/Data/Sequence.purs#L326-L327">Source</a><a name="tail" href="#tail"><h2><code>tail</code></h2></a><p class="decl"><code><span class="ident">tail</span> <span class="syntax">::</span> <span class="keyword">forall</span> <span class="ident">a</span><span class="syntax">.</span> <span class="syntax">(</span><a href="#Seq"><span class="ctor">Seq</span></a> <span class="ident">a</span><span class="syntax">)</span> <span class="syntax">-&gt;</span> <a href="../../../../../../../../../../../../../../../../../../../../../../../purescript-maybe/0.2.2/Data/Maybe/index.html#Maybe"><span class="ctor">Maybe</span></a> <span class="syntax">(</span><a href="#Seq"><span class="ctor">Seq</span></a> <span class="ident">a</span><span class="syntax">)</span></code></p><ul></ul><p>O(1). Get all but the first element of a Seq. Equivalent to <code>drop 1</code>.</p>
+<a href="https://github.com/hdgarrood/purescript-sequences/tree/master/src/Data/Sequence.purs#L330-L331">Source</a><a name="init" href="#init"><h2><code>init</code></h2></a><p class="decl"><code><span class="ident">init</span> <span class="syntax">::</span> <span class="keyword">forall</span> <span class="ident">a</span><span class="syntax">.</span> <span class="syntax">(</span><a href="#Seq"><span class="ctor">Seq</span></a> <span class="ident">a</span><span class="syntax">)</span> <span class="syntax">-&gt;</span> <a href="../../../../../../../../../../../../../../../../../../../../../../../purescript-maybe/0.2.2/Data/Maybe/index.html#Maybe"><span class="ctor">Maybe</span></a> <span class="syntax">(</span><a href="#Seq"><span class="ctor">Seq</span></a> <span class="ident">a</span><span class="syntax">)</span></code></p><ul></ul><p>O(1). Get all but the last element of a Seq. Equivalent to <code>\seq -&gt; take
+(length seq - 1)</code>.</p>
+<a href="https://github.com/hdgarrood/purescript-sequences/tree/master/src/Data/Sequence.purs#L335-L336">Source</a><a name="last" href="#last"><h2><code>last</code></h2></a><p class="decl"><code><span class="ident">last</span> <span class="syntax">::</span> <span class="keyword">forall</span> <span class="ident">a</span><span class="syntax">.</span> <span class="syntax">(</span><a href="#Seq"><span class="ctor">Seq</span></a> <span class="ident">a</span><span class="syntax">)</span> <span class="syntax">-&gt;</span> <a href="../../../../../../../../../../../../../../../../../../../../../../../purescript-maybe/0.2.2/Data/Maybe/index.html#Maybe"><span class="ctor">Maybe</span></a> <span class="ident">a</span></code></p><ul></ul><p>O(1). Get the last element of a Seq. Equivalent to
+<code>\seq -&gt; index seq (length seq - 1)</code>.</p>
+<a href="https://github.com/hdgarrood/purescript-sequences/tree/master/src/Data/Sequence.purs#L340-L341">Source</a><a name="toSeq" href="#toSeq"><h2><code>toSeq</code></h2></a><p class="decl"><code><span class="ident">toSeq</span> <span class="syntax">::</span> <span class="keyword">forall</span> <span class="ident">f</span> <span class="ident">a</span><span class="syntax">.</span> <span class="syntax">(</span><a href="../../../../../../../../../../../../../../../../../../../../../../../purescript-foldable-traversable/0.3.1/Data/Foldable/index.html#Foldable"><span class="ctor">Foldable</span></a> <span class="ident">f</span><span class="syntax">)</span> <span class="syntax">=&gt;</span> <span class="syntax">(</span><span class="ident">f</span> <span class="ident">a</span><span class="syntax">)</span> <span class="syntax">-&gt;</span> <a href="#Seq"><span class="ctor">Seq</span></a> <span class="ident">a</span></code></p><ul></ul><p>Probably O(n), but depends on the Foldable instance. Turn any <code>Foldable</code>
+into a <code>Seq</code>.</p>
+<a href="https://github.com/hdgarrood/purescript-sequences/tree/master/src/Data/Sequence.purs#L345-L346">Source</a><a name="fromSeq" href="#fromSeq"><h2><code>fromSeq</code></h2></a><p class="decl"><code><span class="ident">fromSeq</span> <span class="syntax">::</span> <span class="keyword">forall</span> <span class="ident">f</span> <span class="ident">a</span><span class="syntax">.</span> <span class="syntax">(</span><span class="ctor">Functor</span> <span class="ident">f</span><span class="syntax">,</span> <a href="../../../../../../../../../../../../../../../../../../../../../../../purescript-unfoldable/0.3.2/Data/Unfoldable/index.html#Unfoldable"><span class="ctor">Unfoldable</span></a> <span class="ident">f</span><span class="syntax">)</span> <span class="syntax">=&gt;</span> <span class="syntax">(</span><a href="#Seq"><span class="ctor">Seq</span></a> <span class="ident">a</span><span class="syntax">)</span> <span class="syntax">-&gt;</span> <span class="ident">f</span> <span class="ident">a</span></code></p><ul></ul><p>Probably O(n), but depends on the Unfoldable instance. Turn a <code>Seq</code> into
+any <code>Unfoldable</code>.</p>
+<a href="https://github.com/hdgarrood/purescript-sequences/tree/master/src/Data/Sequence.purs#L350-L351">Source</a><a name="filter" href="#filter"><h2><code>filter</code></h2></a><p class="decl"><code><span class="ident">filter</span> <span class="syntax">::</span> <span class="keyword">forall</span> <span class="ident">a</span><span class="syntax">.</span> <span class="syntax">(</span><span class="ident">a</span> <span class="syntax">-&gt;</span> <span class="ctor">Boolean</span><span class="syntax">)</span> <span class="syntax">-&gt;</span> <span class="syntax">(</span><a href="#Seq"><span class="ctor">Seq</span></a> <span class="ident">a</span><span class="syntax">)</span> <span class="syntax">-&gt;</span> <a href="#Seq"><span class="ctor">Seq</span></a> <span class="ident">a</span></code></p><ul></ul><p>O(n). Create a new Seq which contains only those elements of the input
+Seq which satisfy the given predicate.</p>
+<a href="https://github.com/hdgarrood/purescript-sequences/tree/master/src/Data/Sequence.purs#L355-L356">Source</a></div>
+</div>
+
+</body></html>
